@@ -41,4 +41,6 @@ function setStatus(text, type) {
     status: `${type}`,
   });
 }
-(module.exports = botLogin), setStatus;
+
+function textHandler(folder, subfolder) {}
+module.exports = (botLogin, setStatus, textHandler);
