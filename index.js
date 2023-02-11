@@ -14,6 +14,15 @@ var client = new discord.Client({
   partials: [User, Message, GuildMember, ThreadMember],
 });
 
+client.config = require("./config.json");
+client.events = new Collection();
+client.commands = new Collection();
+client.subCommands = new Collection();
+client.guildConfig = new Collection();
+client.aliases = new Collection();
+client.userSettings = new Collection();
+client.maintenanced = false;
+
 function botLogin(string) {
   if (!string) return console.log("No Token Specified", "color: red;");
   client.login(string);
@@ -25,11 +34,11 @@ function setStatus(text, type) {
   client.user.setPresence({
     activities: [
       {
-        name: `Currently undergoing maintenance. || Dev By Kama`,
+        name: `${text}`,
         type: "LISTENING",
       },
     ],
-    status: "dnd",
+    status: `${type}`,
   });
 }
-module.exports = botLogin;
+(module.exports = botLogin), setStatus;
