@@ -1,0 +1,31 @@
+{
+  "name": "arzeroxjs",
+  "version": "1.1.4",
+  "description": "Create discord bots easily with Arzerox Javascript package.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LordKamaYT/arzeroxjs-npm.git"
+  },
+  "keywords": [
+    "Discord",
+    "discord",
+    "javascript",
+    "discord.js",
+    "arzerox",
+    "arzeroxjs"
+  ],
+  "author": "Kama",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LordKamaYT/arzeroxjs-npm/issues"
+  },
+  "homepage": "https://github.com/LordKamaYT/arzeroxjs-npm#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "discord.js": "^14.7.1"
+  }
+}
