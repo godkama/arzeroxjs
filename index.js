@@ -21,6 +21,10 @@ client.aliases = new Collection();
 client.userSettings = new Collection();
 client.maintenanced = false;
 
+function errorHandler(text) {
+  console.log(text);
+}
+
 function botLogin(token) {
   if (!token) {
     return console.log(chalk.redBright("ERR!"), " No Token Specified");
