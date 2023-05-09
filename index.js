@@ -36,7 +36,7 @@ function botLogin(token) {
   }
 }
 
-class clientActivity {
+class clientStatus {
   constructor(type, txt, status) {
     this.type = type;
     this.txt = txt;
@@ -55,4 +55,5 @@ class clientActivity {
     });
   }
 }
-module.exports = { botLogin, clientActivity };
+
+module.exports = { botLogin, clientStatus };
