@@ -8,7 +8,7 @@ ArzeroxJS is an NPM module using the discord.js library which allows you to crea
 > Disclaimer : This is still experimental code and might not work perfectly
 
 Currently version 1.8.0
-[##Version-1.8.0](View full changelog)
+(##Version-1.8.0)[View full changelog]
 - Added definitions for all functions
 
 - Finished clientStatus() function. See wiki
