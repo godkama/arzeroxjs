@@ -42,7 +42,7 @@ async function startCLI() {
         return new Promise((resolve) => setTimeout(resolve, ms));
       }
 
-      async function createIndexFile() {
+      async function createFiles() {
         if (!fs.existsSync(folderPath)) {
           fs.mkdirSync(folderPath);
           console.log("Created folder: Commands");
@@ -80,7 +80,7 @@ async function startCLI() {
       console.log("Creating index.js file and folder...");
       console.log("Please wait...");
 
-      createIndexFile();
+      createFiles();
 
       break;
     case "login":
