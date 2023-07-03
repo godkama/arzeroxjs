@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import inquirer from inquirer
 function startCLI() {
   console.log("Initialized 📦");
 
