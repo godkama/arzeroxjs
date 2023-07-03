@@ -25,6 +25,8 @@ function startCLI() {
     switch (selectedOption) {
       case "init":
         console.log(chalk.greenBright("Initialized 📦"));
+        break;
+      case "login":
     }
 
     process.exit(0);
