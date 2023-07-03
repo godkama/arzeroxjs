@@ -43,6 +43,6 @@ async function startCLI() {
   }
 }
 
-if (process.argv[0] === "ajsreg") {
+if (process.argv[1] === "ajsreg") {
   startCLI();
 }
