@@ -6,6 +6,7 @@ const path = require("path");
 const chalk = require("chalk");
 const { botLogin, clientStatus } = require("./index.js");
 const inquirer = require("inquirer");
+blankCode = "© 2023, DEV BY KAMA\nnull";
 
 async function startCLI() {
   console.clear();
@@ -76,7 +77,7 @@ async function startCLI() {
         clearInterval(loadingInterval2);
 
         if (!fs.existsSync(indexFilePath)) {
-          fs.writeFileSync(indexFilePath, sampleCode);
+          fs.writeFileSync(indexFilePath, blankCode);
           console.log(chalk.bgGreen('\nCreated "index.js" file.'));
         } else {
           console.log(
