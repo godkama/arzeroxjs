@@ -51,7 +51,7 @@ class clientStatus {
 
   setStatus() {
     try {
-      if(client.user) {
+      if (client.user) {
         client.user.setPresence({
           activities: [
             {
@@ -61,7 +61,7 @@ class clientStatus {
           ],
           status: this.status,
         });
-      });
+      }
     } catch (err) {
       errorHandler(chalk.redBright(`${err}`));
     }
