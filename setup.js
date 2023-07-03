@@ -43,4 +43,6 @@ async function startCLI() {
   }
 }
 
-startCLI();
+if (process.argv[2] === "arzerox") {
+  startCLI();
+}
