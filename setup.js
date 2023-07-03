@@ -53,7 +53,7 @@ async function startCLI() {
       );
 
       fs.writeFileSync(indexFilePath, sampleCode);
-      console.log("Updated index.js file.");
+      console.log(chalk.bgBlue("Updated index.js file."));
 
       console.log("Process finished.");
 
