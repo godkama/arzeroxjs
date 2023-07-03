@@ -80,12 +80,7 @@ async function startCLI() {
         console.log(chalk.bgGreen("\nUpdated index.js file."));
         await sleep(500);
         // Start the loading animation
-        const loadingInterval = setInterval(() => {
-          process.stdout.write(
-            `\rProcessing ${loadingAnimation[animationIndex]}`
-          );
-          animationIndex = (animationIndex + 1) % loadingAnimation.length;
-        }, 100);
+        loadingInterval;
         await sleep(3000); // Simulate a 3-second file editing process
         clearInterval(loadingInterval);
         await sleep(1000); // Simulate a 1-second loading time
