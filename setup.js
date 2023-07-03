@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-import inquirer from "inquirer";
-
 import select, { Separator } from "@inquirer/select";
 
 const answer = await select({
