@@ -1,13 +1,13 @@
 {
   "name": "arzeroxjs",
-  "version": "1.10.58",
+  "version": "1.10.59",
   "description": "Create discord bots easily with Arzerox Javascript package.",
   "main": "index.js",
   "scripts": {
     "test": "node Examples/latest.js"
   },
   "bin": {
-    "arzeroxjs": "./setup.js"
+    "ajsreg": "./setup.js"
   },
   "repository": {
     "type": "git",
