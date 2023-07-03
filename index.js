@@ -58,7 +58,9 @@ class clientStatus {
         ],
         status: this.status,
       });
-    } catch (err) {}
+    } catch (err) {
+      errorHandler(chalk.redBright(`${err}`));
+    }
   }
 }
 
