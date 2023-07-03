@@ -78,9 +78,7 @@ async function startCLI() {
           fs.writeFileSync(indexFilePath, blankCode);
           console.log('\nCreated "index.js" file.');
         } else {
-          console.log(
-            chalk.bgRed('\n"index.js" file already exists. Editing the file.')
-          );
+          console.log('\n"index.js" file already exists. Editing the file.');
         }
         const { token } = await inquirer.prompt({
           type: "password",
@@ -93,7 +91,7 @@ async function startCLI() {
         await sleep(500);
         const loadingInterval3 = setInterval(() => {
           process.stdout.write(
-            chalk.bgBlue(`\rProcessing ${loadingAnimation[animationIndex]}`)
+            `\rProcessing ${loadingAnimation[animationIndex]}`
           );
           animationIndex = (animationIndex + 1) % loadingAnimation.length;
         }, 100);
