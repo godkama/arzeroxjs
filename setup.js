@@ -6,9 +6,9 @@ function startCLI() {
   console.log("Initialized 📦");
 
   const choices = [
-    { name: "Option 1", value: "option1" },
-    { name: "Option 2", value: "option2" },
-    { name: "Option 3", value: "option3" },
+    { name: "Initialize", value: "init" },
+    { name: "Login", value: "login" },
+    { name: "Exit", value: "exit" },
   ];
 
   const selectPrompt = {
