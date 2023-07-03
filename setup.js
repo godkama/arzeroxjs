@@ -42,7 +42,7 @@ async function startCLI() {
       }
       if (!fs.existsSync(folderPath)) {
         fs.mkdirSync(folderPath);
-        console.log("Created folder: myApp");
+        console.log("Created folder: Commands");
       }
 
       console.log("index.js file already exists.");
