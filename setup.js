@@ -28,12 +28,16 @@ function startCLI() {
         console.log(chalk.greenBright("Initialized 📦"));
         break;
       case "login":
-        inquirer.prompt({
-          type: "password",
-          name: "password",
-          message: "Enter your password:",
-          mask: "*", // Mask the input with asterisks
-        });
+        inquirer
+          .prompt({
+            type: "password",
+            name: "password",
+            message: "Enter your password:",
+            mask: "*", // Mask the input with asterisks
+          })
+          .then((passwordAnswer) => {
+            const password = passwordAnswer.password;
+          });
 
         clientLogin(token);
     }
