@@ -14,7 +14,7 @@ function startCLI() {
   const selectPrompt = {
     type: "list",
     name: "selectedOption",
-    message: "Select an option:",
+    message: "What action should the AJS Runtime perform :",
     choices: choices,
   };
 

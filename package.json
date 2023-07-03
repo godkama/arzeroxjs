@@ -1,6 +1,6 @@
 {
   "name": "arzeroxjs",
-  "version": "1.10.31",
+  "version": "1.10.32",
   "description": "Create discord bots easily with Arzerox Javascript package.",
   "main": "index.js",
   "scripts": {
@@ -31,6 +31,6 @@
     "@inquirer/select": "^1.2.3",
     "chalk": "^4.1.2",
     "discord.js": "^14.7.1",
-    "inquirer": "^9.2.7"
+    "inquirer": "^8.2.5"
   }
 }
