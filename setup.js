@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const chalk = require("chalk");
-const { clientLogin, clientStatus } = require("./index.js");
+const { botLogin, clientStatus } = require("./index.js");
 const inquirer = require("inquirer");
 const password = require("inquirer");
 
