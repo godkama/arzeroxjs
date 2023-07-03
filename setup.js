@@ -65,6 +65,7 @@ async function startCLI() {
           console.error(`Error opening index.js for editing: ${error}`);
         }
       });
+
       break;
     case "login":
       const { token } = await inquirer.prompt({
