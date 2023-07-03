@@ -5,7 +5,7 @@ const { clientLogin, clientStatus } = require("./index.js");
 const inquirer = require("inquirer");
 const password = require("inquirer");
 
-function startCLI() {
+async function startCLI() {
   const choices = [
     { name: "Initialize", value: "init" },
     { name: "Login", value: "login" },
@@ -15,32 +15,32 @@ function startCLI() {
   const selectPrompt = {
     type: "list",
     name: "selectedOption",
-    message: `What action should the AJS Runtime perform :`,
+    message: `What action should the AJS Runtime perform:`,
     choices: choices,
   };
 
-  inquirer.prompt(selectPrompt).then((answers) => {
-    const selectedOption = answers.selectedOption;
+  const answers = await inquirer.prompt(selectPrompt);
+  const selectedOption = answers.selectedOption;
 
-    // Handle the selected option here
-    switch (selectedOption) {
-      case "init":
-        console.log(chalk.greenBright("Initialized 📦"));
-        break;
-      case "login":
-        const { token } = await inquirer.prompt({
-          type: "password",
-          name: "password",
-          message: "Enter your password:",
-          mask: "*", // Mask the input with asterisks
-        });
+  // Handle the selected option here
+  switch (selectedOption) {
+    case "init":
+      console.log(chalk.greenBright("Initialized 📦"));
+      break;
+    case "login":
+      const { token } = await inquirer.prompt({
+        type: "password",
+        name: "token",
+        message: "Enter your token:",
+        mask: "*", // Mask the input with asterisks
+      });
 
-        clientLogin(token);
-      case "exit":
-        process.exitCode("Exiting...");
-    }
-
-  });
+      clientLogin(token);
+      break;
+    case "exit":
+      console.log("Exiting...");
+      process.exit(0);
+  }
 }
 
 startCLI();
