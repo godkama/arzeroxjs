@@ -48,9 +48,7 @@ async function startCLI() {
         // Start the loading animation
         const loadingInterval1 = setInterval(() => {
           process.stdout.write(
-            chalk.bgBlue(
-              `\rChecking Folders ${loadingAnimation[animationIndex]}`
-            )
+            `\rChecking Folders ${loadingAnimation[animationIndex]}`
           );
           animationIndex = (animationIndex + 1) % loadingAnimation.length;
         }, 100);
@@ -60,15 +58,15 @@ async function startCLI() {
 
         if (!fs.existsSync(folderPath)) {
           fs.mkdirSync(folderPath);
-          console.log(chalk.bgGreen("\nCreated folder: Commands"));
+          console.log("\nCreated folder: Commands");
         } else {
-          console.log(chalk.bgRed('\n"Commands" folder already exists.'));
+          console.log('\n"Commands" folder already exists.');
         }
 
         await sleep(500);
         const loadingInterval2 = setInterval(() => {
           process.stdout.write(
-            chalk.bgBlue(`\rChecking Files ${loadingAnimation[animationIndex]}`)
+            `\rChecking Files ${loadingAnimation[animationIndex]}`
           );
           animationIndex = (animationIndex + 1) % loadingAnimation.length;
         }, 100);
@@ -78,7 +76,7 @@ async function startCLI() {
 
         if (!fs.existsSync(indexFilePath)) {
           fs.writeFileSync(indexFilePath, blankCode);
-          console.log(chalk.bgGreen('\nCreated "index.js" file.'));
+          console.log('\nCreated "index.js" file.');
         } else {
           console.log(
             chalk.bgRed('\n"index.js" file already exists. Editing the file.')
