@@ -30,7 +30,6 @@ async function startCLI() {
   // Handle the selected option here
   switch (selectedOption) {
     case "init":
-      console.log(chalk.greenBright("Initialized 📦"));
       const fs = require("fs");
       const path = require("path");
 
@@ -39,23 +38,49 @@ async function startCLI() {
       const indexFilePath = path.join(rootPath, "index.js");
       const sampleCode = `console.log('Hello, world!');`;
 
-      if (!fs.existsSync(folderPath)) {
-        fs.mkdirSync(folderPath);
-        console.log("Created folder: Commands");
+      function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
       }
-      console.log(chalk.bgBlue('"Commands" folder already exists.'));
-      if (!fs.existsSync(indexFilePath)) {
-        fs.writeFileSync(indexFilePath, sampleCode);
-        console.log(chalk.bgBlue("Created index.js file."));
+
+      async function createIndexFile() {
+        if (!fs.existsSync(folderPath)) {
+          fs.mkdirSync(folderPath);
+          console.log("Created folder: Commands");
+        }
+
+        if (!fs.existsSync(indexFilePath)) {
+          fs.writeFileSync(indexFilePath, sampleCode);
+          console.log("Created index.js file.");
+        } else {
+          console.log("index.js file already exists. Editing the file.");
+          await sleep(500); // Delay before starting the loading animation
+
+          const loadingAnimation = ["-", "\\", "|", "/"];
+          let animationIndex = 0;
+
+          // Start the loading animation
+          const loadingInterval = setInterval(() => {
+            process.stdout.write(
+              `\rProcessing ${loadingAnimation[animationIndex]}`
+            );
+            animationIndex = (animationIndex + 1) % loadingAnimation.length;
+          }, 100);
+
+          await sleep(3000); // Simulate a 3-second file editing process
+          clearInterval(loadingInterval);
+
+          fs.writeFileSync(indexFilePath, sampleCode);
+          console.log("\nUpdated index.js file.");
+        }
+
+        await sleep(1000); // Simulate a 1-second loading time
+        console.log("Process finished.");
       }
-      console.log(
-        chalk.bgBlue("index.js file already exists. Editing the file.")
-      );
 
-      fs.writeFileSync(indexFilePath, sampleCode);
-      console.log(chalk.bgBlue("Updated index.js file."));
+      console.log("Creating index.js file and folder...");
+      console.log("Please wait...");
 
-      console.log("Process finished.");
+      createIndexFile();
 
       break;
     case "login":
