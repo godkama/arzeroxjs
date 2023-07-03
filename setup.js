@@ -60,9 +60,9 @@ async function startCLI() {
 
         if (!fs.existsSync(folderPath)) {
           fs.mkdirSync(folderPath);
-          console.log(chalk.bgGreen("Created folder: Commands"));
+          console.log(chalk.bgGreen("\nCreated folder: Commands"));
         } else {
-          console.log(chalk.bgRed('"Commands" folder already exists.'));
+          console.log(chalk.bgRed('\n"Commands" folder already exists.'));
         }
 
         await sleep(500);
@@ -78,10 +78,10 @@ async function startCLI() {
 
         if (!fs.existsSync(indexFilePath)) {
           fs.writeFileSync(indexFilePath, sampleCode);
-          console.log(chalk.bgGreen('Created "index.js" file.'));
+          console.log(chalk.bgGreen('\nCreated "index.js" file.'));
         } else {
           console.log(
-            chalk.bgRed('"index.js" file already exists. Editing the file.')
+            chalk.bgRed('\n"index.js" file already exists. Editing the file.')
           );
         }
 
@@ -111,7 +111,7 @@ async function startCLI() {
         clearInterval(loadingInterval4);
 
         await sleep(1000); // Simulate a 1-second loading time
-        console.log(chalk.bgBlue("Process finished."));
+        console.log(chalk.bgBlue("\nProcess finished."));
       }
 
       console.log("Creating index.js file and folder...");
