@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
+const chalk = require("chalk");
+const { clientLogin, clientStatus } = require("./index.js");
 const inquirer = require("inquirer");
 
 function startCLI() {
-  console.log("Initialized 📦");
-
   const choices = [
     { name: "Initialize", value: "init" },
     { name: "Login", value: "login" },
@@ -14,7 +14,7 @@ function startCLI() {
   const selectPrompt = {
     type: "list",
     name: "selectedOption",
-    message: "What action should the AJS Runtime perform :",
+    message: `What action should the AJS Runtime perform :`,
     choices: choices,
   };
 
@@ -22,7 +22,10 @@ function startCLI() {
     const selectedOption = answers.selectedOption;
 
     // Handle the selected option here
-    console.log(`Selected option: ${selectedOption}`);
+    switch (selectedOption) {
+      case "init":
+        console.log(chalk.greenBright("Initialized 📦"));
+    }
 
     process.exit(0);
   });
