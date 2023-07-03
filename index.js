@@ -38,7 +38,6 @@ function botLogin(token) {
       });
     } catch (err) {
       errorHandler(chalk.redBright("ERR! Not a valid token"));
-      break
     }
   }
 }
