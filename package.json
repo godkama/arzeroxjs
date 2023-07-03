@@ -1,6 +1,6 @@
 {
   "name": "arzeroxjs",
-  "version": "1.10.64",
+  "version": "1.10.65",
   "description": "Create discord bots easily with Arzerox Javascript package.",
   "main": "index.js",
   "scripts": {
