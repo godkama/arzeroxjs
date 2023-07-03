@@ -33,7 +33,6 @@ async function startCLI() {
       console.log(chalk.greenBright("Initialized 📦"));
       const fs = require("fs");
       const path = require("path");
-      const { exec } = require("child_process");
 
       const folderPath = path.join(__dirname, "Commands");
       const indexFilePath = path.join(folderPath, "index.js");
@@ -54,17 +53,7 @@ async function startCLI() {
         console.log("Updated index.js file.");
       }
 
-      // Open the index.js file for editing
-      const command =
-        process.platform === "win32"
-          ? `start ${indexFilePath}`
-          : `open ${indexFilePath}`;
-
-      exec(command, (error, stdout, stderr) => {
-        if (error) {
-          console.error(`Error opening index.js for editing: ${error}`);
-        }
-      });
+      console.log("Process finished.");
 
       break;
     case "login":
