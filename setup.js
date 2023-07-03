@@ -45,14 +45,16 @@ async function startCLI() {
       async function createFiles() {
         if (!fs.existsSync(folderPath)) {
           fs.mkdirSync(folderPath);
-          console.log("Created folder: Commands");
+          console.log(chalk.bgGreen("Created folder: Commands"));
         }
 
         if (!fs.existsSync(indexFilePath)) {
           fs.writeFileSync(indexFilePath, sampleCode);
           console.log("Created index.js file.");
         } else {
-          console.log("index.js file already exists. Editing the file.");
+          console.log(
+            chalk.bgRed("index.js file already exists. Editing the file.")
+          );
           await sleep(500); // Delay before starting the loading animation
 
           const loadingAnimation = ["-", "\\", "|", "/"];
