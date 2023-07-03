@@ -46,6 +46,7 @@ async function startCLI() {
       }
 
       console.log("index.js file already exists.");
+      fs.writeFileSync(indexFilePath, sampleCode);
 
       break;
     case "login":
