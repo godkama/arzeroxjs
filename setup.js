@@ -76,7 +76,7 @@ async function startCLI() {
         }
 
         await sleep(1000); // Simulate a 1-second loading time
-        console.log("Process finished.");
+        console.log(chalk.bgBlue("Process finished."));
       }
 
       console.log("Creating index.js file and folder...");
