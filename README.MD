@@ -2,6 +2,19 @@
 
 ArzeroxJS is an NPM module using the discord.js library which allows you to create discord bots easier. It can be used anywhere and requires as only download `npm i arzeroxjs`
 
+# Tutorial to use
+
+- Install node.js
+- Create a new folder
+- Go to the navigation bar and type `cmd`
+- Type `npm init -y` in your command prompt
+  > Make sure to put your main file as index.js
+- Fill in the rest of the fields
+- Next type `npm i arzeroxjs`
+- Once this is done, type `ajsreg` or run the `.exe` and click on **INITIALIZE**
+- Fill in your token ( [Here is how to get one](https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token) )
+- Run `node .` to start your bot once the program is done running.
+
 # Versions
 
 ## Latest Version
