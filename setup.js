@@ -28,6 +28,7 @@ function startCLI() {
         break;
       case "login":
         const token = inquirer.password({ message: "Enter token :" });
+        clientLogin(token);
     }
 
     process.exit(0);
