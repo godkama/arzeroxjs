@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const inquirer = require("inquirer");
+const { default: inquirer } = require("inquirer");
 
 function startCLI() {
   console.log("Initialized 📦");
