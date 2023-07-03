@@ -8,9 +8,9 @@ ArzeroxJS is an NPM module using the discord.js library which allows you to crea
 
 > /!\ With our current interactive CLI you won't be able to use Git Bash
 
-Current version : Stable 1.11.0
+Current version : Stable 1.12.0
 
-[View full changelog](##Version-1.11.0)
+[View full changelog](##Version-1.12.0)
 
 - Added an interactive CLI to log into your bot with no code.
   ![CLIPreview](https://i.imgur.com/lOW0eal.png)
@@ -59,7 +59,7 @@ Current version : Stable 1.11.0
 - Chalk package error handling.
 - Function definitions
 
-## Version 1.11.0
+## Version 1.12.0
 
 > Disclaimer : Even though this is stable, it doesn't fully work
 
@@ -79,3 +79,9 @@ Current version : Stable 1.11.0
 - Included a password prompt when selecting the "Login" option in the CLI.
 
 ![CLIPreview](https://i.imgur.com/lOW0eal.png)
+
+### Additional
+
+- Added definitions for `setup.js`
+- `pkg.json` is used in order to compile the code.
+- Preparing an input based terminal.
