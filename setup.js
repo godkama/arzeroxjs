@@ -35,7 +35,11 @@ async function startCLI() {
       const rootPath = process.cwd(); // Get the current working directory
       const folderPath = path.join(rootPath, "Commands");
       const indexFilePath = path.join(rootPath, "index.js");
-      const sampleCode = `console.log('Hello, world!');`;
+      const sampleCode = ```
+      const { botLogin, clientActivity } = require("arzeroxjs");
+
+      botLogin(${token});
+      clientActivity("type", "text", "status");```;
 
       function sleep(ms) {
         return new Promise((resolve) => setTimeout(resolve, ms));
@@ -84,7 +88,13 @@ async function startCLI() {
             chalk.bgRed('\n"index.js" file already exists. Editing the file.')
           );
         }
-
+        const { token } = await inquirer.prompt({
+          type: "password",
+          name: "token",
+          message:
+            "In order to correctly make the index file, we will need your token :",
+          mask: "#", // Mask the input with asterisks
+        });
         await sleep(500);
         const loadingInterval3 = setInterval(() => {
           process.stdout.write(
