@@ -1,0 +1,11 @@
+{
+  "name": "ajs-runtime",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node <your_script_file>.js"
+  },
+  "pkg": {
+    "targets": ["node14-win-x64"],
+    "outputPath": "dist"
+  }
+}
