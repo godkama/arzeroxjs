@@ -50,7 +50,7 @@ async function startCLI() {
 
         if (!fs.existsSync(indexFilePath)) {
           fs.writeFileSync(indexFilePath, sampleCode);
-          console.log("Created index.js file.");
+          console.log(chalk.bgGreen("Created index.js file."));
         } else {
           console.log(
             chalk.bgRed("index.js file already exists. Editing the file.")
