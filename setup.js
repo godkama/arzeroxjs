@@ -49,7 +49,7 @@ async function startCLI() {
         const loadingInterval1 = setInterval(() => {
           process.stdout.write(
             chalk.bgBlue(
-              `\rChecking Folders ${loadingAnimation[animationIndex]}\n`
+              `\rChecking Folders ${loadingAnimation[animationIndex]}`
             )
           );
           animationIndex = (animationIndex + 1) % loadingAnimation.length;
@@ -68,9 +68,7 @@ async function startCLI() {
         await sleep(500);
         const loadingInterval2 = setInterval(() => {
           process.stdout.write(
-            chalk.bgBlue(
-              `\rChecking Files ${loadingAnimation[animationIndex]}\n`
-            )
+            chalk.bgBlue(`\rChecking Files ${loadingAnimation[animationIndex]}`)
           );
           animationIndex = (animationIndex + 1) % loadingAnimation.length;
         }, 100);
@@ -90,7 +88,7 @@ async function startCLI() {
         await sleep(500);
         const loadingInterval3 = setInterval(() => {
           process.stdout.write(
-            chalk.bgBlue(`\rProcessing ${loadingAnimation[animationIndex]}\n`)
+            chalk.bgBlue(`\rProcessing ${loadingAnimation[animationIndex]}`)
           );
           animationIndex = (animationIndex + 1) % loadingAnimation.length;
         }, 100);
