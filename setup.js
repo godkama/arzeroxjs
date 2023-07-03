@@ -28,6 +28,16 @@ async function startCLI() {
   switch (selectedOption) {
     case "init":
       console.log(chalk.greenBright("Initialized 📦"));
+      const indexFilePath = path.join(__dirname, "index.js");
+      const sampleCode = `console.log('Hello, world!');`;
+
+      if (!fs.existsSync(indexFilePath)) {
+        console.log("index.js file already exists.");
+      }
+      fs.writeFileSync(indexFilePath, sampleCode);
+      console.log("Created index.js file.");
+      console.log("index.js file already exists.");
+
       break;
     case "login":
       const { token } = await inquirer.prompt({
