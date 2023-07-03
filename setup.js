@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import select, { Separator } from "@inquirer/select";
+const { select, Separator } = require("@inquirer/select");
 
 const answer = await select({
   message: "Select a package manager",
