@@ -28,10 +28,15 @@ function startCLI() {
         console.log(chalk.greenBright("Initialized 📦"));
         break;
       case "login":
-        const token = password({
-          message: "Enter token :",
-          mask: true,
-        });
+        inquirer
+        .prompt({
+          type: 'password',
+          name: 'password',
+          message: 'Enter your password:',
+          mask: '*', // Mask the input with asterisks
+        })
+        .then((passwordAnswer) => {
+          const password = passwordAnswer.password;
         clientLogin(token);
     }
 
