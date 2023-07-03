@@ -35,11 +35,13 @@ function startCLI() {
             message: "Enter your password:",
             mask: "*", // Mask the input with asterisks
           })
-          .then((passwordAnswer) => {
-            const token = passwordAnswer.password;
+          .then((answer) => {
+            const token = answer.password;
           });
 
         clientLogin(token);
+      case "exit":
+        process.exitCode("Exiting...");
     }
 
     process.exit(0);
