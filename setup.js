@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+const fs = require("fs");
+const path = require("path");
+
 const chalk = require("chalk");
 const { botLogin, clientStatus } = require("./index.js");
 const inquirer = require("inquirer");
