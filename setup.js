@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { select, Separator } = require("@inquirer/select");
+const select, {Separator } = require("@inquirer/select");
 
 async function startCLI() {
   const answer = await select({
