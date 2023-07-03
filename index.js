@@ -47,7 +47,7 @@ class clientStatus {
     this.status = status;
   }
 
-  set() {
+  setStatus() {
     client.user.setPresence({
       activities: [
         {
