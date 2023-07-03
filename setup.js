@@ -83,7 +83,7 @@ async function startCLI() {
           console.log(chalk.bgGreen('Created "index.js" file.'));
         } else {
           console.log(
-            chalk.bgRed("index.js file already exists. Editing the file.")
+            chalk.bgRed('"index.js" file already exists. Editing the file.')
           );
         }
 
