@@ -6,14 +6,17 @@ ArzeroxJS is an NPM module using the discord.js library which allows you to crea
 
 ## Latest Version
 
-> Disclaimer : This is stable code, but isn't complete yet, so it might not work perfectly
+> /!\ With our current interactive CLI you won't be able to use Git Bash
 
-Current version : Stable 1.9.0
-[View full changelog](##Version-1.9.0)
+Current version : Stable 1.11.0
 
-- Stable `clientLogin()`
-- Dynamic error handling
-- clientStatus() function working. How to use available soon.
+[View full changelog](##Version-1.11.0)
+
+- Added an interactive CLI to log into your bot with no code.
+  ![CLIPreview](https://i.imgur.com/lOW0eal.png)
+- Bug Fixes
+- Compiled into a `.exe`
+- You can now run the CLI with the command `ajsreg`
 
 ## Version 1.1.0
 
@@ -55,3 +58,24 @@ Current version : Stable 1.9.0
 - clientStatus() function working. How to use available soon.
 - Chalk package error handling.
 - Function definitions
+
+## Version 1.11.0
+
+> Disclaimer : Even though this is stable, it doesn't fully work
+
+### Features
+
+- Added an interactive CLI to log into your bot with no code.
+- Implemented a new feature: Compiled the script into a `.exe` for easier distribution.
+- Updated the CLI command to run the application: Instead of running the script directly, you can now use the command `ajsreg`.
+
+### Bug Fixes
+
+- Fixed the issue with the window title not being set correctly.
+- Resolved an issue where the arrow keys were not functioning correctly in the Git Bash terminal.
+- Addressed the problem of the script exiting too quickly by using the `await` keyword for asynchronous prompt handling.
+- Added error handling for launching the script without the required command-line argument.
+- Improved the user experience by displaying a helpful error message when running the script in Git Bash without proper support.
+- Included a password prompt when selecting the "Login" option in the CLI.
+
+![CLIPreview](https://i.imgur.com/lOW0eal.png)
