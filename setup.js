@@ -31,7 +31,21 @@ async function startCLI() {
   switch (selectedOption) {
     case "init":
       console.log(chalk.greenBright("Initialized 📦"));
+      const folderPath = path.join(__dirname, "myApp");
+      const indexFilePath = path.join(folderPath, "index.js");
+      const sampleCode = `console.log('Hello, world!');`;
 
+      if (!fs.existsSync(folderPath)) {
+        fs.mkdirSync(folderPath);
+        console.log("Created folder: myApp");
+      }
+
+      if (!fs.existsSync(indexFilePath)) {
+        fs.writeFileSync(indexFilePath, sampleCode);
+        console.log("Created index.js file.");
+      } else {
+        console.log("index.js file already exists.");
+      }
       break;
     case "login":
       const { token } = await inquirer.prompt({
