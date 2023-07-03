@@ -46,7 +46,7 @@ async function startCLI() {
         let animationIndex = 0;
 
         // Start the loading animation
-        const loadingInterval = setInterval(() => {
+        const loadingInterval1 = setInterval(() => {
           process.stdout.write(
             `\rProcessing ${loadingAnimation[animationIndex]}`
           );
@@ -54,7 +54,7 @@ async function startCLI() {
         }, 100);
 
         await sleep(3000); // Simulate a 3-second file editing process
-        clearInterval(loadingInterval);
+        clearInterval(loadingInterval1);
 
         if (!fs.existsSync(folderPath)) {
           fs.mkdirSync(folderPath);
@@ -63,7 +63,16 @@ async function startCLI() {
           console.log(chalk.bgRed('"Commands" folder already exists.'));
         }
 
+        await sleep(500);
+        const loadingInterval2 = setInterval(() => {
+          process.stdout.write(
+            `\rProcessing ${loadingAnimation[animationIndex]}`
+          );
+          animationIndex = (animationIndex + 1) % loadingAnimation.length;
+        }, 100);
+
         await sleep(3000); // Simulate a 3-second file editing process
+        clearInterval(loadingInterval2);
 
         if (!fs.existsSync(indexFilePath)) {
           fs.writeFileSync(indexFilePath, sampleCode);
@@ -74,8 +83,16 @@ async function startCLI() {
           );
         }
 
+        await sleep(500);
+        const loadingInterval3 = setInterval(() => {
+          process.stdout.write(
+            `\rProcessing ${loadingAnimation[animationIndex]}`
+          );
+          animationIndex = (animationIndex + 1) % loadingAnimation.length;
+        }, 100);
+
         await sleep(3000); // Simulate a 3-second file editing process
-        clearInterval(loadingInterval);
+        clearInterval(loadingInterval3);
 
         fs.writeFileSync(indexFilePath, sampleCode);
         console.log(chalk.bgGreen("\nUpdated index.js file."));
