@@ -6,7 +6,7 @@ const inquirer = require("inquirer");
 const password = require("inquirer");
 
 async function startCLI() {
-  process.title("AJS Runtime");
+  process.title = "AJS Runtime";
   const choices = [
     { name: "Initialize", value: "init" },
     { name: "Login", value: "login" },
