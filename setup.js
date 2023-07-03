@@ -34,11 +34,7 @@ async function startCLI() {
         message: "Enter your token:",
         mask: "*", // Mask the input with asterisks
       });
-      try {
-        botLogin(token);
-      } catch (err) {
-        console.log(err);
-      }
+      botLogin(token);
 
       break;
     case "exit":
