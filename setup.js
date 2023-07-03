@@ -49,7 +49,7 @@ async function startCLI() {
         const loadingInterval1 = setInterval(() => {
           process.stdout.write(
             chalk.bgBlue(
-              `\Checking Folders ${loadingAnimation[animationIndex]}\n`
+              `\rChecking Folders ${loadingAnimation[animationIndex]}\n`
             )
           );
           animationIndex = (animationIndex + 1) % loadingAnimation.length;
