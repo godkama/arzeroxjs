@@ -51,14 +51,16 @@ class clientStatus {
 
   setStatus() {
     try {
-      client.user.setPresence({
-        activities: [
-          {
-            name: this.txt,
-            type: this.type,
-          },
-        ],
-        status: this.status,
+      client.on("ready", () => {
+        client.user.setPresence({
+          activities: [
+            {
+              name: this.txt,
+              type: this.type,
+            },
+          ],
+          status: this.status,
+        });
       });
     } catch (err) {
       errorHandler(chalk.redBright(`${err}`));
