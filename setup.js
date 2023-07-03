@@ -32,23 +32,36 @@ async function startCLI() {
     case "init":
       console.log(chalk.greenBright("Initialized 📦"));
 
+      const fs = require("fs");
+      const path = require("path");
+      const { exec } = require("child_process");
+
       const folderPath = path.join(__dirname, "Commands");
       const indexFilePath = path.join(folderPath, "index.js");
       const sampleCode = `console.log('Hello, world!');`;
 
-      if (!fs.existsSync(indexFilePath)) {
-        fs.writeFileSync(indexFilePath, sampleCode);
-        console.log("Created index.js file.");
-      }
       if (!fs.existsSync(folderPath)) {
         fs.mkdirSync(folderPath);
         console.log("Created folder: Commands");
       }
 
-      console.log("index.js file already exists.");
-      fs.writeFileSync(indexFilePath, sampleCode);
+      if (!fs.existsSync(indexFilePath)) {
+        fs.writeFileSync(indexFilePath, sampleCode);
+        console.log("Created index.js file.");
+      } else {
+        console.log("index.js file already exists. Editing the file.");
 
-      break;
+        fs.writeFileSync(indexFilePath, sampleCode);
+        console.log("Updated index.js file.");
+      }
+
+      // Open the index.js file for editing
+      exec(`start ${indexFilePath}`, (error, stdout, stderr) => {
+        if (error) {
+          console.error(`Error opening index.js for editing: ${error}`);
+        }
+      });
+
     case "login":
       const { token } = await inquirer.prompt({
         type: "password",
