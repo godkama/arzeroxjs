@@ -34,8 +34,12 @@ async function startCLI() {
         message: "Enter your token:",
         mask: "*", // Mask the input with asterisks
       });
+      try {
+        clientLogin(token);
+      } catch (err) {
+        console.log(err);
+      }
 
-      clientLogin(token);
       break;
     case "exit":
       console.log("Exiting...");
