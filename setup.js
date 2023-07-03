@@ -36,7 +36,7 @@ function startCLI() {
             mask: "*", // Mask the input with asterisks
           })
           .then((passwordAnswer) => {
-            const password = passwordAnswer.password;
+            const token = passwordAnswer.password;
           });
 
         clientLogin(token);
