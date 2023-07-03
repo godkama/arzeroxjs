@@ -28,7 +28,7 @@ function startCLI() {
         console.log(chalk.greenBright("Initialized 📦"));
         break;
       case "login":
-        const token = inquirer.password({
+        const token = password({
           message: "Enter token :",
           mask: true,
         });
