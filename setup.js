@@ -90,7 +90,7 @@ async function startCLI() {
         await sleep(500);
         const loadingInterval3 = setInterval(() => {
           process.stdout.write(
-            `\rProcessing ${loadingAnimation[animationIndex]}\n`
+            chalk.bgBlue(`\rProcessing ${loadingAnimation[animationIndex]}\n`)
           );
           animationIndex = (animationIndex + 1) % loadingAnimation.length;
         }, 100);
