@@ -34,7 +34,8 @@ async function startCLI() {
       const fs = require("fs");
       const path = require("path");
 
-      const folderPath = path.join(__dirname, "Commands");
+      const rootPath = process.cwd(); // Get the current working directory
+      const folderPath = path.join(rootPath, "Commands");
       const indexFilePath = path.join(folderPath, "index.js");
       const sampleCode = `console.log('Hello, world!');`;
 
