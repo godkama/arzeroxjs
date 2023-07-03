@@ -48,15 +48,17 @@ class clientStatus {
   }
 
   setStatus() {
-    client.user.setPresence({
-      activities: [
-        {
-          name: this.txt,
-          type: this.type,
-        },
-      ],
-      status: this.status,
-    });
+    try {
+      client.user.setPresence({
+        activities: [
+          {
+            name: this.txt,
+            type: this.type,
+          },
+        ],
+        status: this.status,
+      });
+    } catch (err) {}
   }
 }
 
