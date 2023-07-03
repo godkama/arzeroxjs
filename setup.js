@@ -3,6 +3,7 @@
 const chalk = require("chalk");
 const { clientLogin, clientStatus } = require("./index.js");
 const inquirer = require("inquirer");
+const password = require("inquirer");
 
 function startCLI() {
   const choices = [
