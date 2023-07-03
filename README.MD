@@ -8,12 +8,11 @@ ArzeroxJS is an NPM module using the discord.js library which allows you to crea
 
 > /!\ With our current interactive CLI you won't be able to use Git Bash
 
-Current version : Stable 1.12.0
+Current version : Stable 1.13.0
 
-[View full changelog](##Version-1.12.0)
+[View full changelog](##Version-1.13.0)
 
-- Added an interactive CLI to log into your bot with no code.
-  ![CLIPreview](https://i.imgur.com/lOW0eal.png)
+- Fully functional code maker
 - Bug Fixes
 - Compiled into a `.exe`
 - You can now run the CLI with the command `ajsreg`
@@ -85,3 +84,41 @@ Current version : Stable 1.12.0
 - Added definitions for `setup.js`
 - `pkg.json` is used in order to compile the code.
 - Preparing an input based terminal.
+
+## Version 13.0.0
+
+### Added
+
+- Added the `fs` and `path` modules to handle file system operations.
+- Added the `chalk` module for colorful console output.
+- Imported the `botLogin` and `clientStatus` functions from the `index.js` file.
+- Imported the `inquirer` module for handling user input.
+- Added the `blankCode` variable containing the initial code for the "index.js" file.
+- Implemented the `startCLI` function to handle the command-line interface logic.
+
+### Changed
+
+- Cleared the console and set the process title to "AJS Runtime".
+- Defined the available choices for the user prompt.
+
+### Fixed
+
+- Fixed compatibility issues with Git Bash.
+
+### Features
+
+- Prompted the user to select an action (initialize, login, or exit).
+- Extracted the selected option from the prompt's answer.
+- Implemented a switch statement to handle each selected option.
+- Added the "init" case to handle the initialization action.
+- Defined the root path, folder path, and index file path variables.
+- Created a `sleep` function to simulate a delay.
+- Implemented the `createFiles` function to create the "Commands" folder and "index.js" file.
+- Added a loading animation while creating folders and files.
+- Checked if the "Commands" folder already exists and displayed a message accordingly.
+- Prompted the user for their token to generate the sample code for the "index.js" file.
+- Updated the "index.js" file with the generated sample code.
+- Displayed messages indicating the creation and updating of the "index.js" file.
+- Added a prompt for the user's token in the "login" case.
+- Called the `botLogin` function with the provided token.
+- Added an "exit" case to gracefully exit the program.
