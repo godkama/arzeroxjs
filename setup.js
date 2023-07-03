@@ -31,7 +31,7 @@ async function startCLI() {
   switch (selectedOption) {
     case "init":
       console.log(chalk.greenBright("Initialized 📦"));
-      const folderPath = path.join(__dirname, "myApp");
+      const folderPath = path.join(__dirname, "Commands");
       const indexFilePath = path.join(folderPath, "index.js");
       const sampleCode = `console.log('Hello, world!');`;
 
