@@ -9,11 +9,11 @@ ArzeroxJS is an NPM module using the discord.js library which allows you to crea
 > Disclaimer : This is stable code, but isn't complete yet, so it might not work perfectly
 
 Current version : Stable 1.9.0
-[View full changelog](##Version-1.8.0)
+[View full changelog](##Version-1.9.0)
 
-- Added definitions for all functions
-
-- Finished clientStatus() function. See wiki
+- Stable `clientLogin()`
+- Dynamic error handling
+- clientStatus() function working. How to use available soon.
 
 ## Version 1.1.0
 
@@ -45,3 +45,13 @@ Current version : Stable 1.9.0
 
 - Added definitions for all functions
 - Finished clientStatus() function. See wiki
+
+## Version 1.9.0
+
+> Currently working on a dynamic terminal allowing to make your bot easier
+
+- Stable `clientLogin()`
+- Dynamic error handling
+- clientStatus() function working. How to use available soon.
+- Chalk package error handling.
+- Function definitions
