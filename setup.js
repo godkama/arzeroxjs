@@ -27,6 +27,7 @@ function startCLI() {
         console.log(chalk.greenBright("Initialized 📦"));
         break;
       case "login":
+        const token = inquirer.password({ message: "Enter token :" });
     }
 
     process.exit(0);
