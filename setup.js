@@ -72,7 +72,7 @@ async function startCLI() {
           clearInterval(loadingInterval);
 
           fs.writeFileSync(indexFilePath, sampleCode);
-          console.log(chalk.bgBlue("\nUpdated index.js file."));
+          console.log(chalk.bgGreen("\nUpdated index.js file."));
         }
 
         await sleep(1000); // Simulate a 1-second loading time
