@@ -31,7 +31,6 @@ async function startCLI() {
   switch (selectedOption) {
     case "init":
       console.log(chalk.greenBright("Initialized 📦"));
-
       const fs = require("fs");
       const path = require("path");
       const { exec } = require("child_process");
@@ -56,7 +55,12 @@ async function startCLI() {
       }
 
       // Open the index.js file for editing
-      exec(`start ${indexFilePath}`, (error, stdout, stderr) => {
+      const command =
+        process.platform === "win32"
+          ? `start ${indexFilePath}`
+          : `open ${indexFilePath}`;
+
+      exec(command, (error, stdout, stderr) => {
         if (error) {
           console.error(`Error opening index.js for editing: ${error}`);
         }
