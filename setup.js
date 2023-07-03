@@ -51,7 +51,7 @@ const isGitBash =
 
 if (isGitBash) {
   console.error(
-    "This script is not compatible with Git Bash. Please use a different terminal."
+    "This script is currently not compatible with Git Bash for application issues. Please use a different terminal while we are looking into resolving the problem."
   );
   process.exit(1);
 }
