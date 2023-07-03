@@ -6,7 +6,7 @@ async function startCLI() {
   console.log("📦 Activated");
 
   const answer = await inquirer.select({
-    message: "Select a package manager",
+    message: "What should ArzeroxJS Runtime Perform",
     choices: [
       {
         name: "npm",
