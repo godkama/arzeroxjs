@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const inquirer = require("inquirer");
+import inquirer from "inquirer";
 
 function startCLI() {
   console.log("📦 Activated");
