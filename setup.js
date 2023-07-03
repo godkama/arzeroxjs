@@ -6,17 +6,19 @@ const path = require("path");
 const chalk = require("chalk");
 const { botLogin, clientStatus } = require("./index.js");
 const inquirer = require("inquirer");
-const password = require("inquirer");
 
 async function startCLI() {
   console.clear();
   process.title = "AJS Runtime";
+
+  // Define the available choices
   const choices = [
     { name: "Initialize", value: "init" },
     { name: "Login", value: "login" },
     { name: "Exit", value: "exit" },
   ];
 
+  // Prompt the user to select an option
   const selectPrompt = {
     type: "list",
     name: "selectedOption",
@@ -30,9 +32,6 @@ async function startCLI() {
   // Handle the selected option here
   switch (selectedOption) {
     case "init":
-      const fs = require("fs");
-      const path = require("path");
-
       const rootPath = process.cwd(); // Get the current working directory
       const folderPath = path.join(rootPath, "Commands");
       const indexFilePath = path.join(rootPath, "index.js");
@@ -45,7 +44,7 @@ async function startCLI() {
       async function createFiles() {
         const loadingAnimation = ["-", "\\", "|", "/"];
         let animationIndex = 0;
-        await sleep(500);
+
         // Start the loading animation
         const loadingInterval = setInterval(() => {
           process.stdout.write(
@@ -53,36 +52,37 @@ async function startCLI() {
           );
           animationIndex = (animationIndex + 1) % loadingAnimation.length;
         }, 100);
+
         await sleep(3000); // Simulate a 3-second file editing process
         clearInterval(loadingInterval);
+
         if (!fs.existsSync(folderPath)) {
           fs.mkdirSync(folderPath);
           console.log(chalk.bgGreen("Created folder: Commands"));
+        } else {
+          console.log(chalk.bgRed('"Commands" folder already exists.'));
         }
-        console.log(chalk.bgRed('"Commands" folder already exists.'));
-        await sleep(500);
-        loadingInterval;
+
         await sleep(3000); // Simulate a 3-second file editing process
-        clearInterval(loadingInterval);
+
         if (!fs.existsSync(indexFilePath)) {
           fs.writeFileSync(indexFilePath, sampleCode);
           console.log(chalk.bgGreen('Created "index.js" file.'));
+        } else {
+          console.log(
+            chalk.bgRed("index.js file already exists. Editing the file.")
+          );
         }
-        console.log(
-          chalk.bgRed("index.js file already exists. Editing the file.")
-        );
-        await sleep(500);
-        // Start the loading animation
-        loadingInterval;
+
         await sleep(3000); // Simulate a 3-second file editing process
         clearInterval(loadingInterval);
+
         fs.writeFileSync(indexFilePath, sampleCode);
         console.log(chalk.bgGreen("\nUpdated index.js file."));
-        await sleep(500);
-        // Start the loading animation
-        loadingInterval;
+
         await sleep(3000); // Simulate a 3-second file editing process
         clearInterval(loadingInterval);
+
         await sleep(1000); // Simulate a 1-second loading time
         console.log(chalk.bgBlue("Process finished."));
       }
