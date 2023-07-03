@@ -44,10 +44,7 @@ async function startCLI() {
 }
 
 // Check if launched using Git Bash
-const isGitBash =
-  process.env.TERM === "cygwin" ||
-  process.env.TERM === "mingw" ||
-  process.env.TERM === "msys";
+const isGitBash = process.env.SHELL && process.env.SHELL.includes("bash.exe");
 
 if (isGitBash) {
   console.error(
