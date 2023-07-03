@@ -100,12 +100,12 @@ async function startCLI() {
         clearInterval(loadingInterval3);
 
         fs.writeFileSync(indexFilePath, sampleCode);
-        console.log(chalk.bgGreen("\nUpdated index.js file."));
+        console.log("\nUpdated index.js file.");
 
         await sleep(500);
         const loadingInterval4 = setInterval(() => {
           process.stdout.write(
-            chalk.bgBlue(`\rFinishing ${loadingAnimation[animationIndex]}`)
+            `\rFinishing ${loadingAnimation[animationIndex]}`
           );
           animationIndex = (animationIndex + 1) % loadingAnimation.length;
         }, 100);
@@ -114,7 +114,7 @@ async function startCLI() {
         clearInterval(loadingInterval4);
 
         await sleep(1000); // Simulate a 1-second loading time
-        console.log(chalk.bgBlue("\nProcess finished."));
+        console.log("\nProcess finished.");
       }
 
       console.log("Creating index.js file and folder...");
