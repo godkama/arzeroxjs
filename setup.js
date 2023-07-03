@@ -36,7 +36,7 @@ async function startCLI() {
 
       const rootPath = process.cwd(); // Get the current working directory
       const folderPath = path.join(rootPath, "Commands");
-      const indexFilePath = path.join(folderPath, "index.js");
+      const indexFilePath = path.join(rootPath, "index.js");
       const sampleCode = `console.log('Hello, world!');`;
 
       if (!fs.existsSync(folderPath)) {
