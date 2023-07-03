@@ -1,55 +1,44 @@
-import {
-  Client,
-  ActivityType,
-  Partials,
-  GatewayIntentBits,
-  Collection,
-} from "discord.js";
-
-declare var discord: any;
-declare var Guilds: any;
-declare var GuildMembers: any;
-declare var GuildMessages: any;
-declare var MessageContent: any;
-declare var User: any;
-declare var Message: any;
-declare var GuildMember: any;
-declare var ThreadMember: any;
-declare var client: Client;
-declare var chalk: any;
-
-declare function errorHandler(text: string): void;
-
-declare function botLogin(token: string): void;
-
-declare class clientStatus {
-  constructor(type: ActivityType, txt: string, status: string);
-
-  type: ActivityType;
-  txt: string;
-  status: string;
-
-  set(): void;
-}
-
-declare const events: Collection<any, any>;
-declare const commands: Collection<any, any>;
-declare const subCommands: Collection<any, any>;
-declare const guildConfig: Collection<any, any>;
-declare const aliases: Collection<any, any>;
-declare const userSettings: Collection<any, any>;
-declare const maintenanced: boolean;
+import { Client, ActivityType, Collection } from "discord.js";
 
 declare module "discord.js" {
   interface Client {
-    events: Collection<any, any>;
-    commands: Collection<any, any>;
-    subCommands: Collection<any, any>;
-    guildConfig: Collection<any, any>;
-    aliases: Collection<any, any>;
-    userSettings: Collection<any, any>;
+    events: Collection<string, any>;
+    commands: Collection<string, any>;
+    subCommands: Collection<string, any>;
+    guildConfig: Collection<string, any>;
+    aliases: Collection<string, any>;
+    userSettings: Collection<string, any>;
     maintenanced: boolean;
   }
+
+  interface ClientUser {
+    setPresence(presence: PresenceData): Promise<Presence>;
+  }
+
+  interface PresenceData {
+    activities?: ActivityOptions[];
+    status?: PresenceStatusData;
+    shardID?: number | number[];
+  }
+
+  interface ActivityOptions {
+    name?: string;
+    type?: ActivityType | string;
+    url?: string | null;
+  }
+
+  type PresenceStatusData = "online" | "idle" | "dnd" | "invisible";
 }
+
+declare class clientStatus {
+  constructor(
+    type: ActivityType | string,
+    txt: string,
+    status: PresenceStatusData
+  );
+  setStatus(): void;
+}
+
+declare function botLogin(token: string): void;
 
 export { botLogin, clientStatus };
