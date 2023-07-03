@@ -90,11 +90,7 @@ async function startCLI() {
             "In order to correctly make the index file, we will need your token :",
           mask: "#", // Mask the input with asterisks
         });
-        const sampleCode = ```
-      const { botLogin, clientActivity } = require("arzeroxjs");
-
-      botLogin(${token});
-      clientActivity("type", "text", "status");```;
+        const sampleCode = `const { botLogin, clientActivity } = require("arzeroxjs");\nbotLogin(${token});\nclientActivity("type", "text", "status");`;
         await sleep(500);
         const loadingInterval3 = setInterval(() => {
           process.stdout.write(
