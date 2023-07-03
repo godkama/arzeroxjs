@@ -24,8 +24,7 @@ function startCLI() {
     // Handle the selected option here
     console.log(`Selected option: ${selectedOption}`);
 
-    // Call startCLI again to continue the CLI flow
-    startCLI();
+    process.exit("Succesful");
   });
 }
 
