@@ -1,14 +1,16 @@
 # arzeroxjs-npm
 
 ArzeroxJS is an NPM module using the discord.js library which allows you to create discord bots easier. It can be used anywhere and requires as only download `npm i arzeroxjs`
-# Versions 
+
+# Versions
 
 ## Latest Version
 
-> Disclaimer : This is still experimental code and might not work perfectly
+> Disclaimer : This is stable code, but isn't complete yet, so it might not work perfectly
 
-Currently version 1.8.0
+Current version : Stable 1.9.0
 [View full changelog](##Version-1.8.0)
+
 - Added definitions for all functions
 
 - Finished clientStatus() function. See wiki
