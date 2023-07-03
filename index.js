@@ -51,7 +51,7 @@ class clientStatus {
 
   setStatus() {
     try {
-      client.on("ready", () => {
+      if(client.user) {
         client.user.setPresence({
           activities: [
             {
