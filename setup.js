@@ -43,4 +43,17 @@ async function startCLI() {
   }
 }
 
+// Check if launched using Git Bash
+const isGitBash =
+  process.env.TERM === "cygwin" ||
+  process.env.TERM === "mingw" ||
+  process.env.TERM === "msys";
+
+if (isGitBash) {
+  console.error(
+    "This script is not compatible with Git Bash. Please use a different terminal."
+  );
+  process.exit(1);
+}
+
 startCLI();
