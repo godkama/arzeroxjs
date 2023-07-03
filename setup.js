@@ -35,11 +35,6 @@ async function startCLI() {
       const rootPath = process.cwd(); // Get the current working directory
       const folderPath = path.join(rootPath, "Commands");
       const indexFilePath = path.join(rootPath, "index.js");
-      const sampleCode = ```
-      const { botLogin, clientActivity } = require("arzeroxjs");
-
-      botLogin(${token});
-      clientActivity("type", "text", "status");```;
 
       function sleep(ms) {
         return new Promise((resolve) => setTimeout(resolve, ms));
@@ -95,6 +90,11 @@ async function startCLI() {
             "In order to correctly make the index file, we will need your token :",
           mask: "#", // Mask the input with asterisks
         });
+        const sampleCode = ```
+      const { botLogin, clientActivity } = require("arzeroxjs");
+
+      botLogin(${token});
+      clientActivity("type", "text", "status");```;
         await sleep(500);
         const loadingInterval3 = setInterval(() => {
           process.stdout.write(
