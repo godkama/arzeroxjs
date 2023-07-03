@@ -46,7 +46,7 @@ async function startCLI() {
       console.log(chalk.bgBlue('"Commands" folder already exists.'));
       if (!fs.existsSync(indexFilePath)) {
         fs.writeFileSync(indexFilePath, sampleCode);
-        console.log("Created index.js file.");
+        console.log(chalk.bgBlue("Created index.js file."));
       }
       console.log("index.js file already exists. Editing the file.");
 
