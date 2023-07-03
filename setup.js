@@ -79,8 +79,8 @@ async function startCLI() {
         console.log(chalk.bgBlue("Process finished."));
       }
 
-      console.log("Creating index.js file and folder...");
-      console.log("Please wait...");
+      console.log(chalk.bgWhite("Creating index.js file and folder..."));
+      console.log(chalk.bgWhite("Please wait..."));
 
       createFiles();
 
