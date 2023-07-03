@@ -30,6 +30,5 @@ async function startCLI() {
     ],
   });
 }
-if (process.argv[2] === "arzeroxjs") {
-  startCLI();
-}
+
+startCLI();
