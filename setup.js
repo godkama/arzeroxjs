@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-async function startCLI() {
+function startCLI() {
   console.log("Initialized 📦");
 }
 
